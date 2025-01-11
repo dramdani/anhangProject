@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>siems_mcsProject by WolfPupLabs</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -23,6 +20,7 @@
   <body>
     <!--IMAGETARGETS-->
 		<imagetarget id='siemsmcs' src='targets/siemsmcs.jpeg'></imagetarget>
+		<imagetarget id='siemsmcs_white' src='targets/siemsmcs_white.jpeg'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>
@@ -96,7 +94,7 @@
             return;
         }
         await LoadWebcams();
-        document.getElementById("startARButton").style.display = '';
+        document.getElementById("startARButton").style.display = "";
         window.permissionsGranted = IsCameraPermissionGranted();
       }
       initialize();
@@ -137,7 +135,7 @@
         var startARDiv = document.querySelector("#startARDiv");
         startARDiv.style.opacity = 0;
         setTimeout(()=>{
-	  startARDiv.style.display = "none"
+          startARDiv.style.display = "none";
         }, 500);
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/siems_mcsProj.loader.js";
@@ -164,14 +162,14 @@
           meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
           document.getElementsByTagName('head')[0].appendChild(meta);
         }
-        loadingBar.style.display = 'block';
+        loadingBar.style.display = "block";
         var script = document.createElement("script");
         script.src = loaderUrl;
         script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
-            loadingBar.style.display = 'none';
+            loadingBar.style.display = "none";
             
             window.unityInstance = unityInstance;
             if(window.permissionsGranted) {
@@ -270,7 +268,7 @@
               }
           });
           var select = document.getElementById("chooseCamSel");
-          select.style.display = '';
+          select.style.display = "";
           var count = 0;
           //reverse array because some Android phones can't distinguish front and back cams at first load
           //and when this happens, most of the time, front cam goes first and back cam goes last
@@ -338,13 +336,13 @@
       function ShowError(error){
           var errorDiv = document.getElementById("errorDiv");
           errorDiv.style.opacity = 1;
-          errorDiv.style.display = '';
+          errorDiv.style.display = "";
           document.getElementById("errorText").innerHTML = error;
       }
       function ShowScreenshot(dataUrl){
           var screenshotDiv = document.getElementById("screenshotDiv");
           screenshotDiv.style.opacity = 1;
-          screenshotDiv.style.display = '';
+          screenshotDiv.style.display = "";
           document.getElementById("screenshotImg").src = dataUrl;
           document.getElementById("screenshotImg").style.width = "80vw";
           document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
@@ -359,7 +357,7 @@
       function ShowConfirmUrl(url){
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 1;
-          confirmUrlDiv.style.display = '';
+          confirmUrlDiv.style.display = "";
           window.newUrlString = url;
           document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";                
       }

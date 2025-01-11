@@ -137,7 +137,7 @@
         var startARDiv = document.querySelector("#startARDiv");
         startARDiv.style.opacity = 0;
         setTimeout(()=>{
-          startARDiv.style.visibility = "none";
+	  startARDiv.style.display = "none"
         }, 500);
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/siems_mcsProj.loader.js";
@@ -353,7 +353,7 @@
           var screenshotDiv = document.getElementById('screenshotDiv');
           screenshotDiv.style.opacity = 0;
           setTimeout(()=>{
-            screenshotDiv.style.visibility = 'none';
+            screenshotDiv.style.display = 'none';
           }, 500);
       }
       function ShowConfirmUrl(url){
@@ -367,7 +367,7 @@
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 0;
           setTimeout(()=>{
-            confirmUrlDiv.style.visibility = 'none';
+            confirmUrlDiv.style.display = 'none';
           }, 500);
       }
       window.ITRACKER_GLOBALS = {
